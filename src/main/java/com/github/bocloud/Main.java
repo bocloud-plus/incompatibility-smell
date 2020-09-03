@@ -78,14 +78,17 @@ public class Main {
 		fts.set("removed", diffFeatures(DIR + PRE_VERSION, DIR + NEW_VERSION));
 		node.set("features", fts);
 		
+		ObjectNode fel = new ObjectMapper().createObjectNode();
+		
 		ObjectNode ics = new ObjectMapper().createObjectNode();
 		diffKinds(ics, DIR + PRE_VERSION, DIR + NEW_VERSION);
-		node.set("incompatibility", ics);
+		fel.set("removed", ics);
 		
 		ObjectNode nfs = new ObjectMapper().createObjectNode();
 		diffKinds(nfs, DIR + NEW_VERSION, DIR + PRE_VERSION);
-		node.set("newFields", nfs);
+		fel.set("added", nfs);
 		
+		node.set("fields", fel);
 		System.out.println(node.toPrettyString());
 	}
 	
