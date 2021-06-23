@@ -8,9 +8,7 @@
 - Fields： 属性，在Kubernetes主要指Pod、Deployment等JSON构成
   - removed: 高版本Kubernetes相对于低版本Kubernetes的Kind，不支持的属性
   - added:   高版本Kubernetes相对于低版本Kubernetes的Kind，新支持的属性
-# 参考项目
-
-- [kubernetes-smell](https://github.com/kubesys/kubernetes-smell)，使用命令行获取指定版本Kubernetes支持Kind的JSON全集，请求地址为https://github.com/kubernetes/kubernetes/tree/release-[version]/staging/src/k8s.io/api/testdata，其中version为1.19,1.18等
+  
 
 # 使用示例示例
 
